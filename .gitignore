@@ -1,0 +1,32 @@
+# Environment & secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+.coverage
+
+# Frontend / Node
+node_modules/
+frontend/dist/
+.vite/
+*.local
+
+# Local data / vector store
+chroma_db/
+*.db
+*.sqlite
+*.sqlite3
+
+# IDEs & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+  }
+  .font-mono {
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  }
+}
+
+@keyframes orb-breathe {
+  0%, 100% { transform: scale(1); opacity: 0.88; }
+  50% { transform: scale(1.04); opacity: 1; }
+}
+
+@keyframes orb-ripple {
+  0% { transform: scale(0.95); opacity: 0.65; }
+  100% { transform: scale(1.38); opacity: 0; }
+}
+
+@keyframes orb-spin {
+  0% { transform: rotate(0deg) scale(1.03); }
+  100% { transform: rotate(360deg) scale(1.03); }
+}
+
+@keyframes orb-speak {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.09); }
+  50% { transform: scale(0.97); }
+  75% { transform: scale(1.06); }
+}
+
+.orb-idle {
+  animation: orb-breathe 3.6s ease-in-out infinite;
+}
+.orb-listening-ring {
+  animation: orb-ripple 1.6s ease-out infinite;
+}
+.orb-processing {
+  animation: orb-spin 1.4s linear infinite;
+}
+.orb-speaking {
+  animation: orb-speak 0.75s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orb-idle,
+  .orb-listening-ring,
+  .orb-processing,
+  .orb-speaking {
+    animation: none;
+  }
+}
